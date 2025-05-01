@@ -1,0 +1,107 @@
+version: 2
+
+sources:
+  - name: raw_ohio_sos
+    description: Ohio Secretary of State voter registration data from the Centralized Ohio Voter Registration Database
+    tables:
+      - name: statewide_voter_files
+        description: Active voter registration records including voter details, addresses, districts, and voting history
+        columns:
+          - name: sos_voterid
+            description: The Secretary of State centralized system's generated unique number, assigned to each voter registration record
+            tests:
+              - unique
+              - not_null
+          - name: county_number
+            description: Number that identifies each of Ohio's 88 Counties (01-88)
+          - name: county_id
+            description: County's system generated, unique number assigned to each voter registration record
+          - name: last_name
+            description: Voter's last name
+          - name: first_name
+            description: Voter's first name
+          - name: middle_name
+            description: Voter's middle name
+          - name: suffix
+            description: Voter's name suffix
+          - name: date_of_birth
+            description: Voter's Date of Birth in YYYY-MM-DD format
+          - name: registration_date
+            description: Date voter registered in YYYY-MM-DD format
+          - name: voter_status
+            description: Shows current Voter Status
+          - name: party_affiliation
+            description: >
+              The voter's party affiliation as recorded from their last Primary Election history.
+              Values: C=Constitution, D=Democrat, E=Reform, G=Green, L=Libertarian, 
+              N=Natural Law, R=Republican, S=Socialist
+          - name: residential_address1
+            description: Voter's street address
+          - name: residential_address2
+            description: Additional residential address information
+          - name: residential_city
+            description: Voter's city of residence
+          - name: residential_state
+            description: Voter's state of residence
+          - name: residential_zip
+            description: Voter's 5-digit ZIP code
+          - name: residential_zip_plus4
+            description: Additional 4 digits of ZIP code
+          - name: residential_country
+            description: Voter's country of residence
+          - name: residential_postal_code
+            description: Voter's postal code
+          - name: mailing_address1
+            description: Voter's mailing address
+          - name: mailing_address2
+            description: Additional mailing address information
+          - name: mailing_city
+            description: City for mailing address
+          - name: mailing_state
+            description: State for mailing address
+          - name: mailing_zip
+            description: 5-digit ZIP code for mailing address
+          - name: mailing_zip_plus4
+            description: Additional 4 digits of mailing ZIP code
+          - name: mailing_country
+            description: Country for mailing address
+          - name: mailing_postal_code
+            description: Postal code for mailing address
+          - name: career_center
+            description: Name of Career Center
+          - name: city
+            description: Name of City
+          - name: city_school_district
+            description: Name of City School District
+          - name: county_court_district
+            description: Name of County Court
+          - name: congressional_district
+            description: Congressional District identifier
+          - name: court_of_appeals
+            description: Court of Appeals identifier
+          - name: education_service_center
+            description: Name of Education Service Center
+          - name: exempted_village_school_district
+            description: Name of Exempt School District
+          - name: library_district
+            description: Name of Library District
+          - name: local_school_district
+            description: Name of Local School District
+          - name: municipal_court_district
+            description: Name of Municipal Court District
+          - name: precinct
+            description: Name of Precinct
+          - name: precinct_code
+            description: Code assigned to the Precinct
+          - name: state_board_of_education
+            description: State Board of Education identifier
+          - name: state_representative_district
+            description: House District identifier
+          - name: state_senate_district
+            description: State Senate District identifier
+          - name: township
+            description: Name of Township
+          - name: village
+            description: Name of Village
+          - name: ward
+            description: Name of Ward
