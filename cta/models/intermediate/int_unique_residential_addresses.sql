@@ -9,6 +9,9 @@
         ],
     )
 }}
+
+-- TODO: due to address variations, the next step should be to implement normalizing
+-- and/or fuzzy matching
 select distinct
     residential_address1,
     residential_secondary_addr,
